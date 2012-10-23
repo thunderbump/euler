@@ -15,7 +15,7 @@ if argc != 3:
     sys.exit(1)
 if sys.argv[1] == "below":
     try:
-        max_val = int(sys.argv[2])
+        max_val = long(sys.argv[2])
         below = True
     except:
         print(usage)
@@ -23,7 +23,7 @@ if sys.argv[1] == "below":
         sys.exit(1)
 elif sys.argv[1] == "total":
     try:
-        max_val = int(sys.argv[2])
+        max_val = long(sys.argv[2])
         total = True
     except:
         print(usage)
@@ -49,7 +49,7 @@ try:
             line = line[:-1]
         if line[-1] == '\r':
             line = line[:-1]
-        primes.append(int(line))
+        primes.append(long(line))
     if 2 not in primes:
         primes.insert(0,2)
 except:
