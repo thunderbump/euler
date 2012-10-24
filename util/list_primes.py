@@ -76,6 +76,7 @@ if total:
     while len(primes) < max_val + 1:
         if is_prime(index, primes):
             primes.append(index)
+        index += 1
     for prime in primes:
         reference_file.write("%d\n" % prime)
     reference_file.close()
