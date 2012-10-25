@@ -68,7 +68,7 @@ if below:
     for prime in primes:
         if prime > max_val:
             break
-        print(prime),
+#        print(prime),
 
 if total:
     reference_file = open("primes", 'w')
@@ -82,5 +82,5 @@ if total:
     reference_file.close()
     index = 0
     while index < max_val:
-        print(primes[index]),
+#        print(primes[index]),
         index += 1
