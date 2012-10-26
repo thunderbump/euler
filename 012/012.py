@@ -48,11 +48,11 @@ while num_divisors < max_divisors:
     prime_finder = triangle
     prime_divisors = {}
     for prime in primes:
-        print prime, prime_finder, prime_finder % prime
+    #    print prime, prime_finder, prime_finder % prime
         if prime_finder == 1:
             break
         while prime_finder % prime == 0:
-            print prime, prime_finder
+    #        print prime, prime_finder
             prime_finder /= prime
             if prime in prime_divisors.keys():
                 prime_divisors[prime] += 1
@@ -61,5 +61,6 @@ while num_divisors < max_divisors:
     num_divisors = 1
     # this is wrong. making index stop after some rounds
     for key in prime_divisors.keys():
-        num_divisors += prime_divisors[key]
-    print prime_divisors, num_divisors, triangle
+        num_divisors *= prime_divisors[key] + 1
+    #print prime_divisors, num_divisors, triangle
+print(triangle)
