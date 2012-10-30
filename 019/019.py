@@ -20,15 +20,17 @@ sunday = 6
 def is_leap_year(year):
     if year % 4 != 0:
         return False
-    if year % 100 == 0 and year % 400 != 0:
-        return False
+    #if year % 100 == 0 and year % 400 != 0:
+    #    return False
     return True
 
 #Begin on the 1900-01-01, which was a Monday(day 0) => Sunday when day % 7 = 6
 #day's off by one somewhere. Checking when I can later
-day_count = 0
+
+#1901-01-01 was a Tuesday
+day_count = 1
 sunday_first = 0
-for year in range(0, 101):
+for year in range(1, 101):
     for month in range(0, 12):
         print year, month, day_count % 7, day_count
         if day_count % 7 == sunday:
