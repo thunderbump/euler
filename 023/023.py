@@ -17,7 +17,7 @@ if argc != 1:
 #for all integers X > 28123, X can be expressed as the sum of abundant numbers
 #so end there.
 abundant_numbers = []
-for X in range(1, 28124/2):
+for X in range(1, 28124):
     if sum(divisors.all_divisors(X)[:-1]) > X:
         abundant_numbers.append(X)
 print abundant_numbers

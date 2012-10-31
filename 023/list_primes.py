@@ -3,7 +3,7 @@
 
 import sys
 
-primes = [2]
+primes = [2, 3]
 
 def is_prime(number, prime_list):
     for prime in prime_list:
@@ -12,7 +12,7 @@ def is_prime(number, prime_list):
     return True
 
 def get_primes_below(number):
-    for candidate in range(primes[-1], number + 1):
+    for candidate in range(primes[-1], number + 1, 2):
         if is_prime(candidate, primes):
             primes.append(candidate)
     return primes
