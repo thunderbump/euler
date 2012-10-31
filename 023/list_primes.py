@@ -3,6 +3,8 @@
 
 import sys
 
+primes = [2]
+
 def is_prime(number, prime_list):
     for prime in prime_list:
         if number % prime == 0:
@@ -10,14 +12,12 @@ def is_prime(number, prime_list):
     return True
 
 def get_primes_below(number):
-    primes = [2]    
     for candidate in range(primes[-1], number + 1):
         if is_prime(candidate, primes):
             primes.append(candidate)
     return primes
 
 def get_n_primes(number):
-    primes = [2]
     index = primes[-1]
     while len(primes) < number:
         if is_prime(index, primes):

@@ -16,7 +16,7 @@ def prime_divisors(number):
         prime_divisor[number] = 1
     return prime_divisor
 
-def all_divisors(number):
+def all_divisors(number, sort=False):
     prime_divisor = prime_divisors(number)
     all_divisor = [1]
     for prime in prime_divisor.keys():
@@ -26,5 +26,8 @@ def all_divisors(number):
                 appended_list.append((prime ** mult) * divisor)
         for divisor in appended_list:
             all_divisor.append(divisor)
-    return sorted(all_divisor)
+    if sort:
+        return sorted(all_divisor)
+    else:
+        return all_divisor
 
