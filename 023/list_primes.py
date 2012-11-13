@@ -2,6 +2,7 @@
 """Makes a list of primes less than a given number"""
 
 import sys
+from math import sqrt, ceil
 
 primes = [2, 3]
 
@@ -12,6 +13,19 @@ def is_prime(number, prime_list):
     return True
 
 def get_primes_below(number):
+    max_val = number + 1
+    candidates = {}
+    for init_val in range(2, max_val):
+        candidates[init_val] = True
+    for prime in range(2, max_val):
+        if candidates[prime]:
+            for power in range(prime, max_val, prime)[1:]:
+                candidates[power] = False
+    primes = [prime for prime in candidates if candidates[prime] == True]
+    return primes
+            
+
+def get_primes_below_old(number):
     for candidate in range(primes[-1], number + 1, 2):
         if is_prime(candidate, primes):
             primes.append(candidate)

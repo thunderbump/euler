@@ -12,16 +12,26 @@ def get_circular(pwr_of_10):
     primes = get_primes_below(10 ** pwr_of_10)
     circular = []
     for prime in primes:
+#        print prime, "--"
         original = prime
         step = int(''.join([str(prime)[-1:], str(prime)[:-1]]))
+#        print original, step
+#        steps = []
         while step != original:
             if step not in primes:
                 break
-            step = int(''.join([str(prime)[:-1], str(prime)[-1:]]))
+#            steps.append(step)
+#            print steps, step
+            step = int(''.join([str(step)[-1:], str(step)[:-1]]))
 #            print step, str(prime)[-1:], str(prime)[:-1], ''.join([str(prime)[-1:], str(prime)[:-1]])
         if step == original:
 #            print step, original, "---"
+#            for thing in steps:
+#                print step,
+#            print
             circular.append(original)
+#    for thing in circular:
+#        print(int(thing)),
     return circular
         
 
