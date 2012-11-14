@@ -33,7 +33,7 @@ if __name__ == "__main__":
     while idx < X:
         if is_dbl_palindrome(idx):
             dbl_palindromes.append(idx)
-        idx += 1
+        idx += 2
     #for thing in dbl_palindromes:
     #    print thing, bin(thing)
     print(sum(dbl_palindromes))
