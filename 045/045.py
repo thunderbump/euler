@@ -58,8 +58,8 @@ if __name__ == "__main__":
             
         if tri[index] in testpen and tri[index] in testhexa:
             allthethings.append(tri[index])
-        if index % 100 == 0:
-            print index, allthethings, len(tri), len(pen), len(hexa)
+        #if index % 100 == 0:
+            #print index, allthethings, len(tri), len(pen), len(hexa)
         index += 1
     print allthethings
     #print triangle(100)
